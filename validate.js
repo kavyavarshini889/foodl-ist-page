@@ -1,0 +1,17 @@
+const { body, validationResult } = require('express-validator');
+
+const hotelRules = [
+  body('title').trim().notEmpty().withMessage('Title is required').isLength({ max: 150 }),
+  body('description').trim().notEmpty().withMessage('Description is required'),
+  body('latitude').isFloat({ min: -90, max: 90 }).withMessage('Latitude must be between -90 and 90'),
+  body('longitude').isFloat({ min: -180, max: 180 }).withMessage('Longitude must be between -180 and 180'),
+  body('price').isFloat({ gt: 0 }).withMessage('Price must be greater than 0'),
+];
+
+const handleErrors = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+  next();
+};
+
+module.exports = { hotelRules, handleErrors };
