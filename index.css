@@ -1,4 +1,4 @@
-[data-theme='light'] {
+:root {
   --bg:#cbb89c; --glow1:transparent; --glow2:transparent; --grid:transparent;
   --surface:#dbd7d0; --surface-2:#f0e3cf; --border:#e2d2b8;
   --text:#3b2a1e; --muted:#7a6652; --accent:#8b5a3c; --accent-2:#b07d4f; --accent-3:#a0522d;
@@ -197,7 +197,6 @@ input[type=range] { padding: 0; border: 0; background: none; box-shadow: none; a
 .detail p { color: var(--muted); line-height: 1.7; }
 .detail-img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; margin: 14px 0; border: 1px solid var(--border); }
 .map { height: 420px; width: 100%; margin-top: 16px; border-radius: 16px; border: 1px solid var(--border); }
-[data-theme='dark'] .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.9); }
 
 .popup-overlay { position: fixed; inset: 0; background: #000a; backdrop-filter: blur(4px); display: grid; place-items: center; z-index: 9999; }
 .popup { background: var(--surface-2); padding: 34px 46px; text-align: center; box-shadow:none; animation: pop .3s ease; }
